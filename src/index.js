@@ -294,12 +294,13 @@ console.log("iPad Mini: ", iPadMini);
 // - returns an array of unique product types
 //    => ["mobile", "computer", "tablet"]
 
-// const productTypes = appleStore.products.find(
-//   (product) => product.type === "mobile",
-//   "computer"
-// );
+const mobiles = appleStore.products.filter(
+  (product) => product.type === "mobile"
+);
+const allProductstype = mobiles.concat(tablets, computers);
+console.log("allProductstype: ", allProductstype);
 
-// console.log("productTypes: ", productTypes);
+console.log("mobiles: ", mobiles);
 
 // CART EXERCISES
 
@@ -355,7 +356,7 @@ const totalCartPrice = totalPrice.reduce((a, b) => {
 });
 console.log("totalCartPrice: ", totalCartPrice);
 
-// ----- Section ----- **
+// ----- Section ----- *k*
 
 // Write a function here...
 // - that takes an array as a parameter
@@ -377,6 +378,18 @@ console.log("quantityOfItemsInCart: ", quantityOfItemsInCart);
 //      => "iPhone 12 | Mobile - £1400 x 2 || £2800"
 
 // const recieptRow = function()
+
+const deviceName = iPhone12.toString;
+
+const devicePrice = appleStore.products.filter(
+  (product) => product.price === 1200
+);
+console.log("deviceName: ", devicePrice);
+
+const totalItemsPrice = appleStore.products.map(
+  (product) => product.quantity * product.price
+);
+console.log("totalItemsPrice:", totalItemsPrice);
 
 // ----- Section ----- **
 
