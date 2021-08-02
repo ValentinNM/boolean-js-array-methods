@@ -294,12 +294,12 @@ console.log("iPad Mini: ", iPadMini);
 // - returns an array of unique product types
 //    => ["mobile", "computer", "tablet"]
 
-const productTypes = appleStore.products.find(
-  (product) => product.type === "mobile",
-  "computer"
-);
+// const productTypes = appleStore.products.find(
+//   (product) => product.type === "mobile",
+//   "computer"
+// );
 
-console.log("productTypes: ", productTypes);
+// console.log("productTypes: ", productTypes);
 
 // CART EXERCISES
 
@@ -345,6 +345,15 @@ const cart = [
 // - returns a number that rerpresents the total of the items in the cart
 
 // const totalPrice = function()
+const totalPrice = cart.map(
+  (product) => product.quantity * product.product.price
+);
+console.log("totalPrice: ", totalPrice);
+
+const totalCartPrice = totalPrice.reduce((a, b) => {
+  return a + b;
+});
+console.log("totalCartPrice: ", totalCartPrice);
 
 // ----- Section ----- **
 
@@ -353,6 +362,12 @@ const cart = [
 // - returns a number that rerpresents the quantity of the items in the cart
 
 // const quantityOfItemsInCart = function()
+
+const cartQuantity = cart.map((product) => product.quantity);
+console.log("cartQuantity: ", cartQuantity);
+const sumOfQuantity = (a, b) => a + b;
+const quantityOfItemsInCart = cartQuantity.reduce(sumOfQuantity);
+console.log("quantityOfItemsInCart: ", quantityOfItemsInCart);
 
 // ----- Section ----- **
 
